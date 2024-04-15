@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Iinc -DMERGE_R
+CFLAGS = -Wall -Wextra -Iinc  -DHEAP
 
 # Source files directory
 SRC_DIR = src

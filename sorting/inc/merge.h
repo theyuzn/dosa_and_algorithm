@@ -12,4 +12,4 @@ void mergeSortRecursive(int*, int, int);
 
 void mergeSortIterative(int*, int);
 
-#endif
+#endif //__MERGE_H__

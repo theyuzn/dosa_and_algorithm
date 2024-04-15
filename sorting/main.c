@@ -39,7 +39,7 @@ int main() {
     #endif
 
     #ifdef HEAP
-    
+        heapSort(arr, arr_size - 1);
     #endif
 
     #ifdef MERGE_R
