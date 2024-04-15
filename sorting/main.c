@@ -30,6 +30,18 @@ int main() {
 
     printf("------------>\n");
 
+    #ifdef QUICK
+
+    #endif
+
+    #ifdef BUBBLE
+    
+    #endif
+
+    #ifdef HEAP
+    
+    #endif
+
     #ifdef MERGE_R
         mergeSortRecursive(arr, 0, arr_size - 1);
     #endif
