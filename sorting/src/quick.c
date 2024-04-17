@@ -1,4 +1,8 @@
+#ifdef QUICK
+
 #include "quick.h"
+#include "swap.h"
+
 
 int partition(int *arr, int low, int high) 
 {
@@ -27,3 +31,5 @@ void quickSort(int *arr, int low, int high)
         quickSort(arr, pivot + 1, high);        // Sort the right subarray
     }
 }
+
+#endif

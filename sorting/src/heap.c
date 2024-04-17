@@ -1,4 +1,7 @@
+#ifdef HEAP
+
 #include "heap.h"
+#include "swap.h"
 
 void heapify(int *arr, int n, int i) 
 {
@@ -38,3 +41,5 @@ void heapSort(int *arr, int n)
         heapify(arr, i, 0);
     }
 }
+
+#endif

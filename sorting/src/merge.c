@@ -1,8 +1,7 @@
+#if defined(MERGE_R) || defined(MERGE_I)
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include "merge.h"
-
 
 void merge(int* arr, int left, int middle, int right)
 {
@@ -10,25 +9,18 @@ void merge(int* arr, int left, int middle, int right)
     int size_from_left_size     = middle - left + 1;
     int size_from_right_size    = right - middle;
 
-    // Create temporary arrays
     int *left_arr  = (int*) calloc(size_from_left_size, sizeof(int));
     int *right_arr = (int*) calloc(size_from_right_size, sizeof(int));
 
-    // Copy data to temporary arrays
     memcpy(left_arr, arr + left, sizeof(int) * size_from_left_size);
     memcpy(right_arr, arr + middle + 1, sizeof(int) * size_from_right_size);
     
-    // Merge the temporary arrays back into arr[l..r]
     while(i < size_from_left_size && j < size_from_right_size) 
     {
         if(left_arr[i] <= right_arr[j]) 
-        {
             arr[k++] = left_arr[i++];
-        }
         else 
-        {
             arr[k++] = right_arr[j++];
-        }
     }
 
     // Copy the remaining elements of L[], if any
@@ -86,3 +78,5 @@ void mergeSortIterative(int *arr, int n) {
         }
     }
 }
+
+#endif

@@ -39,6 +39,10 @@ endif
 ifeq ($(sort),mi)
 CFLAGS += -DMERGE_I
 endif
+
+ifeq ($(search),loop)
+CFLAGS += -DSEARCH_LOOP
+endif
 ##################################################################
 
 .PHONY: all clean

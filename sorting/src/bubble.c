@@ -1,4 +1,8 @@
+#ifdef BUBBLE
+
 #include "bubble.h"
+#include "swap.h"
+
 
 void bubbleSort(int *arr, int size) 
 {
@@ -13,3 +17,5 @@ void bubbleSort(int *arr, int size)
         }
     }
 }
+
+#endif

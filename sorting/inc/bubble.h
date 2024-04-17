@@ -5,8 +5,6 @@
  * The bubble sort API in C
  * 
  */
-#include "utils.h"
-
 void bubbleSort(int*, int);
 
 #endif //__BUBBLE_H__

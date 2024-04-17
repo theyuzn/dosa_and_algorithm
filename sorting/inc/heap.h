@@ -3,10 +3,7 @@
 
 /*
  * The heap sort API in C
- * 
  */
-#include "utils.h"
-
 void heapSort(int*, int);
 
 #endif //__HEAP_H__
