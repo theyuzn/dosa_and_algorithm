@@ -6,6 +6,7 @@
         "string_view": "c",
         "stdbool.h": "c",
         "search.h": "c",
-        "ios": "c"
+        "ios": "c",
+        "binary_tree.h": "c"
     }
 }
