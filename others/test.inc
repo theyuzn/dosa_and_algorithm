@@ -1,0 +1,7 @@
+	[0] = "unspec",
+	[1] = "get_wiphy",
+	[2] = "set_wiphy",
+	[3] = "new_wiphy",
+	[4] = "del_wiphy",
+	[5] = "get_interface",
+	[6] = "set_interface",
