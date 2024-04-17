@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Iinc  -DHEAP
+CFLAGS = -Wall -Wextra -Iinc
 
 # Source files directory
 SRC_DIR = src
@@ -15,6 +15,31 @@ SRCS = $(wildcard $(SRC_DIR)/*.c) main.c
 
 # Object files
 OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
+
+
+##################################################################
+# Add flag for each sorting
+##################################################################
+ifeq ($(sort),q)
+CFLAGS += -DQUICK
+endif
+
+ifeq ($(sort),b)
+CFLAGS += -DBUBBLE
+endif
+
+ifeq ($(sort),h)
+CFLAGS += -DHEAP
+endif
+
+ifeq ($(sort),mr)
+CFLAGS += -DMERGE_R
+endif
+
+ifeq ($(sort),mi)
+CFLAGS += -DMERGE_I
+endif
+##################################################################
 
 .PHONY: all clean
 

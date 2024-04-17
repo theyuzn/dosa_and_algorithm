@@ -1,4 +1,4 @@
-#include "search.h"
+#include "search_sorted_arr.h"
 
 bool binarySearch(int *arr, int low, int high, int target)
 {

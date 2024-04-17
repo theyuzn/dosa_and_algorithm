@@ -1,5 +1,5 @@
-#ifndef __SEARCH_H__
-#define __SEARCH_H__
+#ifndef __SEARCH_SORTED_ARR_H__
+#define __SEARCH_SORTED_ARR_H__
 
 /*
  * The search API in C
@@ -11,4 +11,4 @@ bool binarySearch(int*, int, int, int);
 
 bool linearSearch(int*, int, int);
 
-#endif //__SEARCH_H__
+#endif //__SEARCH_SORTED_ARR_H__

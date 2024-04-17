@@ -1,9 +1,4 @@
-void swap(int *a, int *b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
+#include "heap.h"
 
 void heapify(int *arr, int n, int i) 
 {
@@ -26,7 +21,6 @@ void heapify(int *arr, int n, int i)
         heapify(arr, n, largest);
     }
 }
-
 
 void heapSort(int *arr, int n) 
 {

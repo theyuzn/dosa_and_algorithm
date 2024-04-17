@@ -1,12 +1,19 @@
+/* 
+ * - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ * Include header files
+ * - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
+// Sorting
 #include "merge.h"
 #include "heap.h"
 #include "bubble.h"
 #include "quick.h"
 
-#include "search.h"
+// Search
+#include "search_sorted_arr.h"
 
 
 /* 
@@ -33,11 +40,11 @@ int main() {
     printf("------------>\n");
 
     #ifdef QUICK
-
+        quickSort(arr, 0, arr_size - 1);
     #endif
 
     #ifdef BUBBLE
-    
+        bubbleSort(arr, arr_size);
     #endif
 
     #ifdef HEAP
