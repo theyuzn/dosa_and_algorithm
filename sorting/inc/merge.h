@@ -3,9 +3,6 @@
 
 /*
  * The merge sort API in C
- *
- * 
- * 
  */
 
 void mergeSortRecursive(int*, int, int);

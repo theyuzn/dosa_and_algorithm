@@ -6,6 +6,8 @@
 #include "bubble.h"
 #include "quick.h"
 
+#include "search.h"
+
 
 /* 
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -52,6 +54,16 @@ int main() {
 
 
     printArray(arr, arr_size);
+
+    bool result = false;
+    int target = 12;
+
+    result = binarySearch(arr, 0, arr_size - 1, target);
+    printf("Search %d in array is %c\n", target, result? 'V':'X');
+
+    result = linearSearch(arr, arr_size, target);
+    printf("Search %d in array is %c\n", target, result? 'V':'X');
+
     return 0;
 }
 
