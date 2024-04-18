@@ -11,6 +11,8 @@
 #include "heap.h"
 #include "bubble.h"
 #include "quick.h"
+#include "insertion.h"
+#include "selection.h"
 
 // Search
 #include "search_sorted_arr.h"
@@ -36,9 +38,34 @@ int main() {
     
     printArray(arr, arr_size);
 
+    #ifdef INSERTION
+        printf("Sort the array with quick sort\n");
+        insertionSort(arr, arr_size);
+    #endif
+
+    #ifdef SELECTION
+        printf("Sort the array with quick sort\n");
+        selectionSort(arr, arr_size);
+    #endif
+
     #ifdef QUICK
         printf("Sort the array with quick sort\n");
         quickSort(arr, 0, arr_size - 1);
+    #endif
+
+    #ifdef QUICK_API
+        printf("Sort the array with API-based quick sort\n");
+        quickSort_api(arr, arr_size);
+
+        char * (str_arr[]) = {"aae", "123" , "124"};
+        int size_of_str_arr = (int) sizeof(str_arr) / sizeof(str_arr[0]);
+        for(int i = 0; i < size_of_str_arr; i++)
+            printf("%s\n", str_arr[i]);
+
+        str_quickSort_api(str_arr, size_of_str_arr);
+        
+        for(int i = 0; i < size_of_str_arr; i++)
+            printf("%s\n", str_arr[i]);
     #endif
 
     #ifdef BUBBLE

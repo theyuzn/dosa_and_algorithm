@@ -20,8 +20,20 @@ OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
 ##################################################################
 # Add flag for each sorting
 ##################################################################
+ifeq ($(sort),s)
+CFLAGS += -DSELECTION
+endif
+
+ifeq ($(sort),i)
+CFLAGS += -DINSERTION
+endif
+
 ifeq ($(sort),q)
 CFLAGS += -DQUICK
+endif
+
+ifeq ($(sort),qa)
+CFLAGS += -DQUICK_API
 endif
 
 ifeq ($(sort),b)

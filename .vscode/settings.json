@@ -7,6 +7,18 @@
         "stdbool.h": "c",
         "search.h": "c",
         "ios": "c",
-        "binary_tree.h": "c"
+        "binary_tree.h": "c",
+        "__locale": "c",
+        "sstream": "c",
+        "__hash_table": "c",
+        "__split_buffer": "c",
+        "array": "c",
+        "bitset": "c",
+        "deque": "c",
+        "initializer_list": "c",
+        "queue": "c",
+        "stack": "c",
+        "unordered_map": "c",
+        "vector": "c"
     }
 }
