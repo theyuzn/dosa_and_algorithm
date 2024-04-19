@@ -25,21 +25,20 @@ void quickSort_api(int *arr, int size)
     qsort(arr, size, sizeof(int), compare);
 }
 
-int partition(int *arr, int low, int high) 
+static int pivot(int *arr, int low, int high) 
 {
-    int pivot = arr[high];  // Choose the last element as the pivot
-    int i = low - 1;        // Index of the smaller element
+    int pivot_val = arr[high];  // Choose the last element as the pivot
+    int i = low;                // Index of the smaller element
 
     for (int j = low; j < high; j++) 
     {
-        if(arr[j] <= pivot) 
-        {
-            i++;
-            swap(&arr[i], &arr[j]);
-        }
+        if(arr[j] <= pivot_val) 
+            swap(&arr[i++], &arr[j]);
     }
-    swap(&arr[i + 1], &arr[high]);
-    return i + 1;
+    swap(&arr[i], &arr[high]);
+
+    // return the pivot index
+    return i;     
 }
 
 // Recursive function to perform Quick Sort
@@ -47,9 +46,9 @@ void quickSort(int *arr, int low, int high)
 {
     if (low < high) 
     {
-        int pivot = partition(arr, low, high);  // Partitioning index
-        quickSort(arr, low, pivot - 1);         // Sort the left subarray
-        quickSort(arr, pivot + 1, high);        // Sort the right subarray
+        int pivot_idx = pivot(arr, low, high);  // Partitioning index
+        quickSort(arr, low, pivot_idx - 1);         // Sort the left subarray
+        quickSort(arr, pivot_idx + 1, high);        // Sort the right subarray
     }
 }
 

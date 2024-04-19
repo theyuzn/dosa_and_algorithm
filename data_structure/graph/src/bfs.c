@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdbool.h>
-#include "def.h"
 #include "bfs.h"
 #include <stdio.h>
 

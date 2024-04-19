@@ -6,36 +6,45 @@
 void merge(int* arr, int left, int middle, int right)
 {
     int i = 0, j = 0, k = left;
-    int size_from_left_size     = middle - left + 1;
-    int size_from_right_size    = right - middle;
 
-    int *left_arr  = (int*) calloc(size_from_left_size, sizeof(int));
-    int *right_arr = (int*) calloc(size_from_right_size, sizeof(int));
+    int size_l  = middle - left + 1;
+    int size_r  = right - middle;
 
-    memcpy(left_arr, arr + left, sizeof(int) * size_from_left_size);
-    memcpy(right_arr, arr + middle + 1, sizeof(int) * size_from_right_size);
+    int *arr_l  = (int*) calloc(size_l, sizeof(int));
+    int *arr_r  = (int*) calloc(size_r, sizeof(int));
+
+    memcpy(arr_l, arr + left, sizeof(int) * size_l);
+    memcpy(arr_r, arr + middle + 1, sizeof(int) * size_r);
     
-    while(i < size_from_left_size && j < size_from_right_size) 
+    while(i < size_l && j < size_r) 
     {
-        if(left_arr[i] <= right_arr[j]) 
-            arr[k++] = left_arr[i++];
+        if(arr_l[i] <= arr_r[j]) 
+            arr[k++] = arr_l[i++];
         else 
-            arr[k++] = right_arr[j++];
+            arr[k++] = arr_r[j++];
     }
 
     // Copy the remaining elements of L[], if any
-    while(i < size_from_left_size) 
+    if(i < size_l)
     {
-        arr[k++] = left_arr[i++];
+        memcpy(arr + k, arr_l + i, (size_l - i) * sizeof(int));
     }
 
-    // Copy the remaining elements of R[], if any
-    while (j < size_from_right_size) 
+    if(j < size_r)
     {
-        arr[k++] = right_arr[j++];
+        memcpy(arr + k, arr_r + j, (size_r - j) * sizeof(int));
     }
+    // while(i < size_l) 
+    // {
+    //     arr[k++] = arr_l[i++];
+    // }
+
+    // // Copy the remaining elements of R[], if any
+    // while (j < size_r) 
+    // {
+    //     arr[k++] = arr_r[j++];
+    // }
 }
-
 
 
 void mergeSortRecursive(int* arr, int left, int right)
@@ -50,7 +59,6 @@ void mergeSortRecursive(int* arr, int left, int right)
         mergeSortRecursive(arr, middle + 1, right);
 
         merge(arr, left, middle, right);
-        return;
     }
 }
 

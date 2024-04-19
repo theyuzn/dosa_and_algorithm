@@ -28,6 +28,7 @@ TreeNode_t* insertBT(TreeNode_t *root, int data)
 
 TreeNode_t* arrayToBTree(int *arr, int size) 
 {
+    // {5, 3, 7, 1, 4, 6, 8, 10, 14, 12, 20, 18, 16, 100, 50};
     TreeNode_t *root = NULL;
     for (int i = 0; i < size; i++) 
         root = insertBT(root, arr[i]);

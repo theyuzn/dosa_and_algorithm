@@ -4,7 +4,7 @@
 /*
  * The Breadth First Search API in C
  */
-
+#include "def.h";
 
 bool BFS(Graph_t *graph, int src, int des);
 

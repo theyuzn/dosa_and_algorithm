@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "def.h"
 #include "dfs.h"
 #include "bfs.h"
 

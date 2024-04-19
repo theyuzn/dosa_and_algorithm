@@ -1,8 +1,7 @@
 #include <stdlib.h>
-#include "def.h"
 #include "dfs.h"
 
-#if 1
+#if 0
 
 #include <stdbool.h>
 // Recursive helper function for DFS
@@ -37,9 +36,6 @@ bool DFS(struct Graph* graph, int src, int dest) {
     // Call the recursive helper function
     return DFSHelper(graph, src, dest, visited);
 }
-
-
-
 
 
 #else
